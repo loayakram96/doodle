@@ -1,6 +1,10 @@
 # Doodle
 Real-time chat application for a full-stack position at Doodle
 
+https://github.com/loayakram96/doodle/assets/28843246/7ab1fdf4-346d-4910-80d7-5210eda527e0
+
+
+
 # How to run
 - Clone the repository to your local machine.
 - Ensure that Docker is installed on your computer.
