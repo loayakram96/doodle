@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+
+  harper:
+    image: harperdb/harperdb:latest
+    restart: always
+    container_name: harperdb
+    volumes:
+      - "./data:/data/db"
+    ports:
+      - 9925:9925
+      - 9926:9926
+
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    depends_on:
+      - api
+      - client
+    ports:
+      - "3050:80"
+
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: "./server"
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    depends_on:
+      - harper
+    env_file:
+      - .env
+
+  client:
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
