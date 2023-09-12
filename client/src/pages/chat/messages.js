@@ -7,7 +7,6 @@ const Messages = ({ socket }) => {
   // When we receive a message from the server, add it to the messages array
   useEffect(() => {
     socket.on("receive_message", (data) => {
-      console.log(data);
       setMessagesReceived((state) => [
         ...state,
         {
@@ -30,9 +29,7 @@ const Messages = ({ socket }) => {
     return () => socket.off("last_messages");
   }, [socket]);
 
-  useEffect(() => {
-    console.log(messagesRecieved);
-  }, [messagesRecieved]);
+  useEffect(() => {}, [messagesRecieved]);
 
   function sortMessagesByDate(messages) {
     return messages.sort(

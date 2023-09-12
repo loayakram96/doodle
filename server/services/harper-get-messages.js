@@ -6,14 +6,13 @@ exports.getAllMessages = (room, callback) => {
       table: "messages",
       searchAttribute: "room",
       searchValue: room,
-      attributes: ['*']
+      attributes: ["*"],
     },
     (err, messages) => {
       if (err) {
         console.error(err);
         callback(err, null);
       } else {
-        console.log("messages", messages);
         callback(null, messages);
       }
     }
