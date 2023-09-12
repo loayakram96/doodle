@@ -69,6 +69,7 @@ io.on("connection", (socket) => {
     const { username, room } = data;
     socket.leave(room);
     const __createdtime__ = Date.now();
+    socket.removeAllListeners("send_message");
     chatUsers = leaveRoom(socket.id, chatUsers);
     socket.to(room).emit("chatroom_users", chatUsers);
     socket.to(room).emit("receive_message", {
