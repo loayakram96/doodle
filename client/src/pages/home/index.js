@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 
-const Home = ({ username, setUsername, room, setChatRoom, socket }) => {
+const Home = ({ username, setUsername, room, setChat, socket }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Home = ({ username, setUsername, room, setChatRoom, socket }) => {
 
         <select
           className={styles.input}
-          onChange={(e) => setChatRoom(e.target.value)}
+          onChange={(e) => setChat(e.target.value)}
         >
           <option>-- Select Channel --</option>
           <option value="dev">Dev</option>
