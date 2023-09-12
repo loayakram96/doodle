@@ -1,0 +1,77 @@
+.chatContainer {
+    margin: 0 10rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
+  .roomAndUsersColumn {
+    text-align: center;
+  }
+  .roomTitle {
+    margin-bottom: 3.75rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #fff;
+  }
+  .usersTitle {
+    font-size: 1.5rem;
+    color: #fff;
+  }
+  .usersList {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 60px;
+    color: rgb(29 124 149);
+  }
+  .usersList li {
+    margin-bottom: 12px;
+  }
+  .messagesColumn {
+    height: 85vh;
+    overflow: auto;
+    padding: 10px;
+  }
+  .message {
+    background: rgb(29 124 149);
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+  }
+  .msgMeta {
+    color: lightblue;
+    font-size: 0.75rem;
+  }
+  .msgText {
+    color: white;
+  }
+  .sendMessageContainer {
+    display: flex;
+    gap: 0.25rem;
+    padding: 1rem 1.5rem 1.5rem 1rem;
+  }
+  .messageInput {
+    padding: 0.875rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    border: 1px solid lightblue;
+    font-size: 1rem;
+  }
+  .btn-outline {
+    color: white;
+    background: #7b1c20;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .chatContainer {
+      margin: 0 1rem;
+    }
+  
+    .sendMessageContainer {
+      flex-direction: column;
+    }
+  
+    .roomAndUsersColumn {
+      padding-right: 1rem;
+    }
+  }
+  
